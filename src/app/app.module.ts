@@ -14,6 +14,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { ToastrModule } from 'ngx-toastr';
     AngularFirestoreModule,
     FormsModule,
     ToastrModule.forRoot(),
-    
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
