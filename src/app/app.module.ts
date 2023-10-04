@@ -16,7 +16,12 @@ import { CategoriesComponent } from './categories/categories.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewPostComponent } from './posts/new-post/new-post.component';
-import { AllPostsComponent } from './posts/all-posts/all-posts.component'
+import { AllPostsComponent } from './posts/all-posts/all-posts.component';
+
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { HttpClientModule } from '@angular/common/http';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,10 @@ import { AllPostsComponent } from './posts/all-posts/all-posts.component'
     AngularFirestoreModule,
     FormsModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularEditorModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
