@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment.prod';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CategoriesComponent,
     NewPostComponent,
     AllPostsComponent,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -41,6 +45,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AngularEditorModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AngularFireAuthModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],
