@@ -10,7 +10,7 @@ export class CategoriesService {
 
   constructor(private afs: AngularFirestore, private toastrService: ToastrService) { }
 
-  saveData(categoryData: any) {
+  saveCategory(categoryData: any) {
 
     this.afs.collection('categories').add(categoryData).then(docRef => {
       console.log(docRef);
@@ -19,7 +19,7 @@ export class CategoriesService {
       .catch(err => { console.log(err) });
   }
 
-  loadData(){
+  loadCategories(){
     return this.afs.collection('categories').snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
@@ -32,13 +32,13 @@ export class CategoriesService {
     )
   }
 
-  updateData(id: any, updatedData: any){
+  updateCategory(id: any, updatedData: any){
     this.afs.collection('categories').doc(id).update(updatedData).then(docRef => {
       this.toastrService.success('Data updated successfully');
     })
   }
 
-  deleteData(id:any){
+  deleteCategory(id:any){
     this.afs.collection('categories').doc(id).delete().then(docRef => {
       this.toastrService.info('Data removed');
     })

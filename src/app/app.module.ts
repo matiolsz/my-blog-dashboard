@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-
 import { environment } from 'src/environments/environment.prod';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -37,7 +35,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule,
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,

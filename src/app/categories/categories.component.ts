@@ -18,7 +18,7 @@ export class CategoriesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.categoriesService.loadData().subscribe(val => {
+    this.categoriesService.loadCategories().subscribe(val => {
       console.log(val);
       this.categoryArray = val;
     })
@@ -30,11 +30,11 @@ export class CategoriesComponent implements OnInit {
       action: "testing"
     }
     if (this.formStatus == 'Add') {
-      this.categoriesService.saveData(categoryData);
+      this.categoriesService.saveCategory(categoryData);
       formData.reset();
     }
     else if(this.formStatus == 'Edit') {
-      this.categoriesService.updateData(this.categoryId, categoryData)
+      this.categoriesService.updateCategory(this.categoryId, categoryData)
       formData.reset();
     this.formStatus = 'Add';
 
@@ -49,6 +49,6 @@ export class CategoriesComponent implements OnInit {
   }
 
   onDelete(id:any){
-    this.categoriesService.deleteData(id);
+    this.categoriesService.deleteCategory(id);
   }
 }

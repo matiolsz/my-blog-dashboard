@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-all-posts',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AllPostsComponent {
 
+  postArray: Array<any> | undefined;
+
+  constructor(private postsService: PostsService){}
+
+  ngOnInit(){
+    this.postsService.loadPosts().subscribe(val => {
+    this.postArray = val;
+  })
+  }
+
+  delete(id: any){
+    this.postsService.deletePost(id);
+  }
 }
