@@ -42,6 +42,8 @@
                                 <td>
                                     <button class="btn btn-sm btn-warning" routerLink="/new-post" [queryParams]="{id: post.id}"> Edit </button>
                                     <button class="btn btn-sm btn-danger ml-2" (click)='delete(post.id)' > Delete </button>
+                                    <button *ngIf="!post.data.isFeatured" class="btn btn-sm btn-success ml-2" (click)='markAsFeatured(post.id, true)' > Mark As Featured </button>
+                                    <button *ngIf="post.data.isFeatured" class="btn btn-sm btn-info ml-2" (click)='markAsFeatured(post.id, false)' > Delete from Featured </button>
                                 </td>
                                 <td></td>
                             </tr>

@@ -21,4 +21,11 @@ export class AllPostsComponent {
   delete(id: any){
     this.postsService.deletePost(id);
   }
+
+  markAsFeatured(id:any, isFeatured: boolean){
+    const isFeaturedUpdate = {
+      isFeatured: isFeatured
+    }
+    this.postsService.markAsFeatured(id, isFeaturedUpdate);
+  }
 }
