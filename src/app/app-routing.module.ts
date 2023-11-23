@@ -5,14 +5,15 @@ import { CategoriesComponent } from './categories/categories.component';
 import { AllPostsComponent } from './posts/all-posts/all-posts.component';
 import { NewPostComponent } from './posts/new-post/new-post.component';
 import { LoginComponent } from './auth/login/login.component';
+import { authGuard } from './services/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent},
+  { path: '', component: DashboardComponent, canActivate: [authGuard]},
   { path: 'login', component: LoginComponent},
-  { path: 'categories', component: CategoriesComponent},
+  { path: 'categories', component: CategoriesComponent, canActivate: [authGuard]},
 
-  { path: 'posts', component: AllPostsComponent},
-  { path: 'new-post', component: NewPostComponent},
+  { path: 'posts', component: AllPostsComponent, canActivate: [authGuard]},
+  { path: 'new-post', component: NewPostComponent, canActivate: [authGuard]},
   
 ];
 

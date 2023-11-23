@@ -11,6 +11,8 @@ export class AuthService {
 
   loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
+  isLoggedInGuard: boolean = false;
+
   constructor(private afAuth: AngularFireAuth, private toastr: ToastrService, private router: Router) { }
 
   login(email:any, password: any) {
@@ -18,6 +20,7 @@ export class AuthService {
       this.toastr.success('Logged In Successfully');
       this.loadUser();
       this.loggedIn.next(true);
+      this.isLoggedInGuard = true;
       this.router.navigate(['/']);
     }).catch(e=>{
       this.toastr.warning(e);
